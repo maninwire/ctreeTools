@@ -157,8 +157,8 @@ class mycherrytree:
             copyfile(SCRIPTFOLDER+"/notebook.nbk",file2)
 
     def start(self):
+        #this is where it all starts
         self.createBasicStruct()
-        #for child in self.root.getchildren():
         for child in self.root.findall("node"):
             self.process(child,self.output)
 
@@ -190,7 +190,6 @@ if __name__ == '__main__':
     parser.add_option("-i", "--input", help="cherry tree file, ctd format")
     parser.add_option("-o", "--output", help="output keepnote folder")
     (options, args) = parser.parse_args()
-
 
     if not options.input:print("input file needed");exit()
     if not options.output:print("output file needed");exit()
